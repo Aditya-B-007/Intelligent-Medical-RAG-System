@@ -29,11 +29,11 @@ The operational flow of the application is as follows:
 
 1.  **Initialization**: On the first run, the `RAG` class in `RAG2.py` invokes the `setup_mpi_config` function from `generate_config.py`.
 2.  **Schema Discovery**: The system connects to all databases defined in `Config.py`, analyzes their schemas, and generates the `mp_data.jsonl` file containing the necessary mappings.
-3.  [cite\_start]**User Input**: The user runs `google2.0.py` and is prompted to provide a patient ID/name, a description of their medical concern, and optional image and document files[cite: 2].
+3.  **User Input**: The user runs `google2.0.py` and is prompted to provide a patient ID/name, a description of their medical concern, and optional image and document files.
 4.  **Data Retrieval**: The `RAG2.py` engine uses the MPI map to resolve the patient's identity across the databases. It then fetches all historical and related records for that patient concurrently from all sources.
-5.  [cite\_start]**Context Aggregation**: The retrieved database records are combined with the user's text, image data, and document text to form a single, comprehensive context[cite: 2].
-6.  [cite\_start]**AI Analysis**: This aggregated context is sent to the Gemini model with a system prompt instructing it to perform a medical analysis and return a structured JSON response[cite: 2].
-7.  [cite\_start]**Result Presentation**: The `google2.0.py` script parses the JSON response from the AI and displays a formatted report to the user[cite: 2].
+5.  **Context Aggregation**: The retrieved database records are combined with the user's text, image data, and document text to form a single, comprehensive context.
+6.  **AI Analysis**: This aggregated context is sent to the Gemini model with a system prompt instructing it to perform a medical analysis and return a structured JSON response.
+7.  **Result Presentation**: The `google2.0.py` script parses the JSON response from the AI and displays a formatted report to the user.
 
 ## Setup and Installation
 
